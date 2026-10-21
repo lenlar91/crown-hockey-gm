@@ -1,5 +1,5 @@
-/* Crown Hockey GM offline cache, build 7466c57ad3 */
-var CACHE="chgm-7466c57ad3",FILES=["./","index.html","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","icons/apple-touch-icon.png","lang/nb.js","lang/sv.js","lang/de.js","lang/fr.js","lang/ru.js"];
+/* Crown Hockey GM offline cache, build 43c9a83c05 */
+var CACHE="chgm-43c9a83c05",FILES=["./","index.html","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","icons/apple-touch-icon.png","lang/nb.js","lang/sv.js","lang/de.js","lang/fr.js","lang/ru.js"];
 self.addEventListener("install",function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(FILES)}).then(function(){return self.skipWaiting()}))});
 self.addEventListener("activate",function(e){e.waitUntil(caches.keys().then(function(ks){return Promise.all(ks.filter(function(k){return k.indexOf("chgm-")===0&&k!==CACHE}).map(function(k){return caches.delete(k)}))}).then(function(){return self.clients.claim()}))});
 self.addEventListener("fetch",function(e){var r=e.request;if(r.method!=="GET")return;
